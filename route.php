@@ -1,7 +1,7 @@
 <?php
 require_once "app/controller/AuthController.php";
 require_once "app/controller/AgenteController.php";
-
+require_once "app/controller/ClienteController.php";
 
 // definimos la base url de forma dinamica
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
@@ -21,24 +21,37 @@ switch ($parametro[0]) {
         $controller->mostrarAgentes();
         break;
 
-    case 'mostrarAgente':
-        $controller = new AgenteController();
-        $controller->mostrarAgente($parametro[1]);
+    case 'clientes':
+        $controller = new ClienteController();
+        $controller->mostrarClientes();
         break;
+    case 'mostrarClientes':
+        $controller = new ClienteController();
+        $controller->mostrarClientes($parametro[1]);
+    break;
+
 
     case 'crearAgente':
         $controller = new AgenteController();
         $controller->newAgent();
         break;
 
+    case 'crearCliente':
+        $controller = new ClienteController();
+        $controller->newClient();
+        break;
+
+
     case 'delete':
         $controller = new AgenteController();
         $controller->delete($parametro[1]);
         break;
 
-    case 'usuarios':
-        echo "Usuarios";
-        break;
+    case 'cambiarEstado':
+        $controller = new ClienteController();
+        $controller->delete($parametro[1]);
+    break;
+
 
     case 'login':
         $controller = new AuthController();
@@ -60,18 +73,6 @@ switch ($parametro[0]) {
         // PARA EL MOMENTO DE REGISTRAR UN USUARIO UDS. DEBEN USAR ÉSTE ÚLTIMO
         echo password_hash($pass, PASSWORD_DEFAULT);
         break;
-    // case 'addTask':
-    //     newTask();
-    //     break;
-
-   
-
-
-    // case 'finalize':
-    //     finalizeTask($parametro[1]);
-    //     break;
-
-
 
     default:
     //    TODO:: hacer algo

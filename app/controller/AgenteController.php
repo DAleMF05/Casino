@@ -59,9 +59,4 @@ class AgenteController{
             // }
         }
     }
-
-    function login(){
-        
-    }
-
 }

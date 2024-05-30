@@ -19,28 +19,14 @@
         {/if}
 
     {foreach $agentes as $agente}
-        {$class = ($agente->activado) ? "activado": ""}
-        <tr class={$class}>
+       
+        <tr>
             <td>{$agente->nombre}</td>
             <td>{$agente->saldo}</td>
-            {* <td>{$agente->email}</td> *}
-            {* {$estado = ($agente->activado) ?  "agente activado": "agente desactivado"} *}
             <td>
-            <a href='mostrarAgente/{$agente->id_agente}' class='btn btn-primary'>Ver</a>
+            <a href='mostrarClientes/{$agente->id_agente}' class='btn btn-primary'>Ver Clientes</a>
             <a href='delete/{$agente->id_agente}' class='btn btn-danger'>Eliminar</a>
             </td>
-            
-            
-            {* <td>{$estado}</td>
-            {if !$agente->activado}
-                <td>
-                    <a href='finalize/{$agente->id_agente} class='btn btn-success'>Activar</a>
-                </td>
-            {else}
-                <td>
-                    <a href='show/{$agente->id_agente} class='btn btn-primary'>Ver</a>
-                </td>
-            {/if} *}
             
         </tr>
         {/foreach}

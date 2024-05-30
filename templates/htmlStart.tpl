@@ -23,7 +23,7 @@
           <a class="nav-link active" aria-current="page" href="agentes">Agentes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="usuarios">Usuarios</a>
+          <a class="nav-link" href="clientes">Clientes</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="login">Login</a>

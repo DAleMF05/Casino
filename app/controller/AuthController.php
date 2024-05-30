@@ -22,11 +22,11 @@ class AuthController
                 $email = $_POST['email'];
                 $password = $_POST['password'];
 
-                // $clave = "12345";
-                // echo password_hash($clave, PASSWORD_DEFAULT); die();
+                $clave = "12345";
+                echo password_hash($clave, PASSWORD_DEFAULT); die();
 
                 
-                $usuario = $this->model->getUser($email);
+                // $usuario = $this->model->getUser($email);
                 
 
                 if ($usuario && password_verify($password, $usuario->password)) {

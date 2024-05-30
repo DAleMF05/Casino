@@ -8,7 +8,7 @@
         <input type="text" name="email" class="form-control" placeholder="Ingrese email">
       </div>
       <div class="mb-3">
-        <label class="form-label">Password</label>
+        <label class="form-label">Contraseña</label>
         <input type="text" name="password" class="form-control" placeholder="Ingrese contraseña">
       </div>
     {if $msj}
@@ -17,7 +17,7 @@
         </div>
     {/if}
     
-   <button type="submit" class="btn btn-primary col-12">Submit</button>
+   <button type="submit" class="btn btn-primary col-12">Ingresar</button>
   </form>
 
 {include 'htmlEnd.tpl'}
