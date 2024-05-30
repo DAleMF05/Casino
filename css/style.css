@@ -1,0 +1,12 @@
+.finalizada{
+    text-decoration: line-through;
+}
+
+.formAddTask{
+    border: 1px solid rgb(83, 81, 81);
+    padding: 10px;
+    border-radius: 20px;
+}
+.main-navbar{
+    background-color: #111827;
+}
