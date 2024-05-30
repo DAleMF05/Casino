@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-05-2024 a las 20:06:36
+-- Tiempo de generación: 30-05-2024 a las 17:47:26
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -40,7 +40,9 @@ CREATE TABLE `agentes` (
 --
 
 INSERT INTO `agentes` (`id_agente`, `nombre`, `saldo`, `email`, `activado`) VALUES
-(5, 'agente1', 6000.00, 'a1@gamil.com', 0);
+(11, 'Lucas', 320.00, 'lucasgaturrososa@hotmail.com', 1),
+(12, 'Ale', 320.00, 'Alejandro@gmail.com', 1),
+(13, 'Manuel', 320000.00, 'manueliriart@gmail.com', 0);
 
 -- --------------------------------------------------------
 
@@ -55,6 +57,26 @@ CREATE TABLE `cliente` (
   `activado` tinyint(1) NOT NULL,
   `id_agente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id_usuario` int(11) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `password` varchar(250) NOT NULL,
+  `rol` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `email`, `password`, `rol`) VALUES
+(1, 'lucassosa2019@hotmail.com', '$2y$10$30sN3AyNuJhBMKXh19yDj.5J/9Xi3epHL2xQzZMbYXnEy4GT5skem', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -74,6 +96,12 @@ ALTER TABLE `cliente`
   ADD KEY `fk_cliente_agentes` (`id_agente`);
 
 --
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id_usuario`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -81,13 +109,19 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de la tabla `agentes`
 --
 ALTER TABLE `agentes`
-  MODIFY `id_agente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_agente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
   MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
