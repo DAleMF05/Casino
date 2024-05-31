@@ -12,11 +12,13 @@ class ClienteView
     $this->smarty = new Smarty();
   }
 
-  function mostrarClientes($clientes, $id)
+  function showAllClients($clientes, $agentes)
   {
+
+
     $this->smarty->assign("base", BASE_URL);
     $this->smarty->assign("clientes", $clientes);
-    $this->smarty->assign("id", $id);
+    $this->smarty->assign("agentes", $agentes);
 
     $this->smarty->display('tableClientes.tpl');
 
@@ -27,5 +29,13 @@ class ClienteView
     $this->smarty->assign("id", $id);
 
     $this->smarty->display();
+  }
+
+  function showClients($cliente){
+    $this->smarty->assign("base", BASE_URL);
+    $this->smarty->assign("clientes", $cliente);
+    
+    $this->smarty->display('tableClients.tpl');
+
   }
 }

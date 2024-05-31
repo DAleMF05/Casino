@@ -1,3 +1,4 @@
+
 <form class="col-3 m-auto" action="crearCliente" method="POST">
     
       <legend class="text-center">Crear Cliente</legend>
@@ -16,8 +17,15 @@
           <option value="1">Activado</option>  
         </select>
       </div>
-      
-      <input name="id_agente" class="form-control" hidden value={$id}>
+      <div class="mb-3">
+      <label class="form-label">Agente Padre</label>
+      <select  name="id_agente" class="form-select">
+      {foreach $agentes as $agente}
+        <option value="{$agente->id_agente}" >{$agente->nombre}</option>
+      {/foreach}
+      </select>
+    </div>
+    
   
       <button type="submit" class="btn btn-primary col-12">Crear Cliente</button>
-  </form>
+</form>

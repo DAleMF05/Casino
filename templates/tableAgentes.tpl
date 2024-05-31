@@ -25,7 +25,7 @@
             <td>{$agente->saldo}</td>
             <td>
             <a href='mostrarClientes/{$agente->id_agente}' class='btn btn-primary'>Ver Clientes</a>
-            <a href='delete/{$agente->id_agente}' class='btn btn-danger'>Eliminar</a>
+            <a href='deleteAgent/{$agente->id_agente}' class='btn btn-danger'>Eliminar</a>
             </td>
             
         </tr>

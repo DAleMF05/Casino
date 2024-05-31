@@ -1,6 +1,5 @@
 {include 'htmlStart.tpl'}
 
-{include 'formAddclientes.tpl'}
 
 <table class="table table-success table-striped mt-2 text-center">
     <thead>
@@ -9,7 +8,6 @@
             <th scope="col">Saldo</th>
             <th scope="col">Activado</th>
             <th scope="col">Acciones</th>
-            <th scope="col">Agente Padre</th>
         </tr>
     </thead>
     <tbody>
@@ -48,7 +46,6 @@
                         
                     {/if}
                 </td>
-                <td>{$cliente->nombre}</td>
             
         </tr>
         {/foreach}

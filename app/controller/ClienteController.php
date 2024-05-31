@@ -1,22 +1,31 @@
 <?php
 require_once "app/model/ClienteModel.php";
+require_once "app/model/AgenteModel.php";
 require_once "app/view/ClienteView.php";
 
 class ClienteController{
 
     private $model;
+    private $modelAgente;
     private $view;
     private $err;
 
     function __construct(){
         $this->model = new ClienteModel();
+        $this->modelAgente = new AgenteModel();
         $this->view = new ClienteView();
     }
 
-    function mostrarClientes($id = null){
-      
-        $clientes = $this->model->getAll();
-        $this->view->mostrarClientes($clientes, $id);
+    function showAllClients($id = null){
+        $agentes = $this->modelAgente->getAll();
+        $clientes = $this->model->getAllCliete_y_Agente();
+        
+        $this->view->showAllClients($clientes, $agentes);
+    }
+
+    function showClients($id = null){
+        $clientes = $this->model->getClients($id);
+        $this->view->showClients($clientes);
     }
 
      function cambiarEstado($id){

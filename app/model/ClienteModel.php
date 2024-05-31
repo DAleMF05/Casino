@@ -16,6 +16,17 @@ function getAll(){
     return $clientes;
 }
 
+function getAllCliete_y_Agente(){
+    //abrimos la conexion;
+    $db = $this->createConexion();
+   
+    //Enviar la consulta
+    $sentencia = $db->prepare("SELECT * FROM clientes c, agentes a WHERE c.id_agente = a.id_agente");
+    $sentencia->execute();
+    $clientes = $sentencia->fetchAll(PDO::FETCH_OBJ);
+    return $clientes;
+}
+
 function insertClient($nombre, $saldo, $activado, $id){
     //abrimos la conexion;
     $db = $this->createConexion();
@@ -38,14 +49,14 @@ function cambiarEstado($id){
     $resultado->execute([1,$id]); // ejecuta
 }
 
-function getClient($id){
+function getClients($id){
     //abrimos la conexion;
     $db = $this->createConexion();
    
     //Enviar la consulta
-    $sentencia = $db->prepare("SELECT * FROM clientes WHERE id_cliente = ?");
+    $sentencia = $db->prepare("SELECT * FROM clientes WHERE id_agente = ?");
     $sentencia->execute([$id]);
-    $cliente = $sentencia->fetch(PDO::FETCH_OBJ);
+    $cliente = $sentencia->fetchAll(PDO::FETCH_OBJ);
     return $cliente;
 }
 

@@ -23,13 +23,17 @@ switch ($parametro[0]) {
 
     case 'clientes':
         $controller = new ClienteController();
-        $controller->mostrarClientes();
+        $controller->showAllClients();
         break;
-    case 'mostrarClientes':
+    case 'showAllClients':
         $controller = new ClienteController();
-        $controller->mostrarClientes($parametro[1]);
+        $controller->showAllClients($parametro[1]);
     break;
 
+    case 'mostrarClientes':
+        $controller = new ClienteController();
+        $controller->showClients($parametro[1]);
+    break;
 
     case 'crearAgente':
         $controller = new AgenteController();
@@ -42,14 +46,19 @@ switch ($parametro[0]) {
         break;
 
 
-    case 'delete':
+    case 'deleteClient':
+        $controller = new ClienteController();
+        $controller->delete($parametro[1]);
+        break;
+
+    case 'deleteAgent':
         $controller = new AgenteController();
         $controller->delete($parametro[1]);
         break;
 
     case 'cambiarEstado':
         $controller = new ClienteController();
-        $controller->delete($parametro[1]);
+        $controller->cambiarEstado($parametro[1]);
     break;
 
 
