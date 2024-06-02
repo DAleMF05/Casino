@@ -19,7 +19,6 @@ function getAll(){
 function insertAgent($nombre, $saldo, $email, $activado){
     //abrimos la conexion;
     $db = $this->createConexion();
-   
     //Enviar la consulta
     $resultado= $db->prepare("INSERT INTO agentes (nombre, saldo, email, activado) VALUES (?,?,?,?)");
     $resultado->execute([$nombre, $saldo, $email, $activado]); // ejecuta
