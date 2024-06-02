@@ -32,7 +32,7 @@ function insertClient($nombre, $saldo, $activado, $id){
     $db = $this->createConexion();
    
     //Enviar la consulta
-    $resultado= $db->prepare("INSERT INTO clientes (nombre_usuario, saldo, activado, id_agente) VALUES (?,?,?,?)");
+    $resultado= $db->prepare("INSERT INTO clientes (nombre_usuario, saldo_cliente, activado, id_agente) VALUES (?,?,?,?)");
     $resultado->execute([$nombre, $saldo, $activado, $id]); // ejecuta
 }
 

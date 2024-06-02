@@ -27,7 +27,7 @@
             {$class = ($cliente->activado) ? "activado": ""}
             <tr class={$class}>
                 <td>{$cliente->nombre_usuario}</td>
-                <td>{$cliente->saldo}</td>
+                <td>{$cliente->saldo_cliente}</td>
 
                 {$estado = ($cliente->activado) ?  "cliente activado": "cliente desactivado"}
                 <td>{$estado}</td>
@@ -35,7 +35,7 @@
                     <a href='deleteClient/{$cliente->id_cliente}' class=' btn btn-danger'>Eliminar</a>
                     
                     
-                    {if !$cliente->activado}
+                    {* {if !$cliente->activado}
                     
                         <a href='cambiarEstado/{$cliente->id_cliente}' class=' btn btn-success'>Activar</a>
                         
@@ -43,10 +43,10 @@
                     
                     {else}
                     
-                        <a href='cambiarEstado/{$cliente->id_cliente}' class=' btn btn-success'>Desactivar</a>
+                        <a href='cambiarEstado/{$cliente->id_cliente}' class=' btn btn-success'>Desactivar</a> *}
                         
                         
-                    {/if}
+                    {* {/if} *}
                 </td>
                 <td>{$cliente->nombre}</td>
             

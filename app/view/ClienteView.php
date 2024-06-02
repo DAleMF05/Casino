@@ -24,9 +24,9 @@ class ClienteView
 
   }
 
-  function cambiarEstado($id){
+  function cambiarEstado($id_cliente){
     $this->smarty->assign("base", BASE_URL);
-    $this->smarty->assign("id", $id);
+    $this->smarty->assign("id", $id_cliente);
 
     $this->smarty->display();
   }
