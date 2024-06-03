@@ -7,7 +7,7 @@
         <tr>
             <th scope="col">Nombre</th>
             <th scope="col">Saldo</th>
-            <th scope="col">Activado</th>
+            <th scope="col">Estado</th>
             <th scope="col">Acciones</th>
             <th scope="col">Agente Padre</th>
         </tr>

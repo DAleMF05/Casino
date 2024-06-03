@@ -32,10 +32,10 @@ function delete($id){
     $resultado->execute([$id]); // ejecuta
 }
 
-function finalize($id){
+function editAgent($nombre,$saldo,$email,$activado,$id_agente){
     $db = $this->createConexion();
-    $resultado= $db->prepare("UPDATE agentes SET activado = ? WHERE id_agente = ?");
-    $resultado->execute([1,$id]); // ejecuta
+    $resultado= $db->prepare("UPDATE agentes SET nombre = ?, saldo = ?, email = ?, activado = ? WHERE agentes.id_agente = ?;");
+    $resultado->execute([$nombre,$saldo,$email,$activado,$id_agente]);
 }
 
 function getAgent($id){

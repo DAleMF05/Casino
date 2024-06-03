@@ -7,6 +7,8 @@
         <tr>
             <th scope="col">Nombre</th>
             <th scope="col">Saldo</th>
+            <th scope="col">Email</th>
+            <th scope="col">Estado</th>
             <th scope="col">Acciones</th>
         </tr>
     </thead>
@@ -23,9 +25,12 @@
         <tr>
             <td>{$agente->nombre}</td>
             <td>{$agente->saldo}</td>
+            <td>{$agente->email}</td>
+            <td>{$agente->activado}</td>
             <td>
             <a href='mostrarClientes/{$agente->id_agente}' class='btn btn-primary'>Ver Clientes</a>
             <a href='deleteAgent/{$agente->id_agente}' class='btn btn-danger'>Eliminar</a>
+            <a href='showEditAgent/{$agente->id_agente}' class='btn btn-danger'>Editar</a>
             </td>
             
         </tr>

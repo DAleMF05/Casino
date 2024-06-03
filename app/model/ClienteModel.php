@@ -43,10 +43,11 @@ function delete($id){
     $resultado->execute([$id]); // ejecuta
 }
 
-function cambiarEstado($id){
+function editClient($nombre,$saldo,$activado,$id_cliente){
     $db = $this->createConexion();
-    $resultado= $db->prepare("UPDATE clientes SET activado = ? WHERE id_cliente = ?");
-    $resultado->execute([1,$id]); // ejecuta
+    $resultado= $db->prepare("UPDATE clientes SET nombre = ?, saldo = ?, activado = ? WHERE clientes.id_cliente = ?");
+    $resultado->execute([$nombre,$saldo,$activado,$id_cliente]);
+
 }
 
 function getClients($id){

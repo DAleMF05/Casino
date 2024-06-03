@@ -56,11 +56,17 @@ switch ($parametro[0]) {
         $controller->delete($parametro[1]);
         break;
 
-    case 'cambiarEstado':
-        $controller = new ClienteController();
-        $controller->cambiarEstado($parametro[1]);
-    break;
+    case 'showEditAgent':
+        $controller = new AgenteController();
+        $controller->showEditAgent($parametro[1]);
 
+        break;
+
+    case 'editAgent':
+        $controller = new AgenteController();
+        $controller->editAgent($parametro[1]);
+    
+        break;
 
     case 'login':
         $controller = new AuthController();

@@ -40,10 +40,29 @@ class AgenteController{
         header("Location:".BASE_URL."agentes");
     }
 
-    // function finalize($id){
-    //     $this->model->finalize($id);
-    //     header("Location:".BASE_URL."agentes");
-    // }
+    function showEditAgent($id_agente){
+        $agente = $this->model->getAgent($id_agente);
+        $this->view->showEditAgent($agente);
+    }
+    function editAgent($id_agente){
+
+            if($_SERVER["REQUEST_METHOD"] == "POST"){
+                if(!empty($_POST['nombre']) && !empty($_POST['saldo'])&& !empty($_POST['email'])&&
+                isset($_POST['activado'])
+                ){
+                    $nombre = $_POST['nombre'];
+                    $saldo = $_POST['saldo'];
+                    $email = $_POST['email'];
+                    $activado = $_POST['activado'];
+                    $id_agente = $_POST['id_agente'];
+                    $this->model->editAgent($nombre, $saldo, $email, $activado, $id_agente);
+                    header("Location:".BASE_URL."agentes");             
+    
+                }else{
+                    $this->err->showErr("Faltan datos");    
+                }
+            }
+    }
 
     function newAgent(){
         if($_SERVER["REQUEST_METHOD"] == "POST"){

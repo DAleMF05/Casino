@@ -26,9 +26,17 @@
   <li class="nav-item">
     <a class="nav-link" href="login" >Login</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="logout">Cerrar Sesion</a>
-  </li>
+  
+  {if !$logged}
+    <li class="nav-item">
+      <a class="nav-link" href="login">Iniciar Sesion</a>
+    </li>
+    {else}
+    <li class="nav-item">
+      <a class="nav-link" href="logout">Cerrar Sesion</a>
+    </li>
+  {/if}
+   
 </ul>
     </div>
 </nav>
