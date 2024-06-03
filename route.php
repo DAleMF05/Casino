@@ -72,16 +72,14 @@ switch ($parametro[0]) {
         $controller->verify();
         break;
 
-    // CASOS DE EJEMPLO
-    // case 'hash':
-    //     // CASO DE EJEMPLO
-    //     $pass = "12345";
-    //     echo md5($pass);
-    //     echo "<br>";
-    //     echo "<br>";
+    case 'logout':
+        $controller = new authController();
+        $controller->logout();
+        break;
+        
     //     // PARA EL MOMENTO DE REGISTRAR UN USUARIO UDS. DEBEN USAR ÉSTE ÚLTIMO
     //     echo password_hash($pass, PASSWORD_DEFAULT);
-    //     break;
+
 
     default:
     //    TODO:: hacer algo

@@ -14,20 +14,25 @@ class AgenteController{
     }
 
     function mostrarAgentes(){
-        $agentes = $this->model->getAll();
-        $this->view->mostrarAgentes($agentes);
+        if(authHelpers::checkLogged()){
+            $agentes = $this->model->getAll();
+            $this->view->mostrarAgentes($agentes);
+        }else{
+            // $this->err->showErr("No existe el pagente con id: $id");
+        }
     }
 
     function mostrarAgente($id){
+        if(authHelpers::checkLogged()){
+
+            $agente = $this->model->getAgent($id);
         
-        $agente = $this->model->getAgent($id);
-     
-        if($agente){
-            $this->view->mostrarAgente($agente);
+            if($agente){
+                $this->view->mostrarAgente($agente);
+            }
+        }else{
+            // $this->err->showErr("No existe el pagente con id: $id");
         }
-        // else{
-        //      $this->err->showErr("No existe la tarea con id: $id");
-        // }
     }
 
     function delete($id){

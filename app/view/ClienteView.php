@@ -1,16 +1,9 @@
 <?php
-require_once "libs/Smarty.class.php";
+require_once "view.php";
 
 
-class ClienteView
+class ClienteView extends view
 {
-
-  private $smarty;
-
-  function __construct()
-  {
-    $this->smarty = new Smarty();
-  }
 
   function showAllClients($clientes, $agentes)
   {

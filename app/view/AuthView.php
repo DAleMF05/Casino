@@ -1,16 +1,8 @@
 <?php
-require_once "libs/Smarty.class.php";
+require_once "view.php";
 
-class AuthView
+class AuthView extends view
 {
-
-  private $smarty;
-
-  function __construct(){
-    $this->smarty = new Smarty();
-  }
-  
-
   function showLogin($msj = null)
   {
 

@@ -17,15 +17,23 @@ class ClienteController{
     }
 
     function showAllClients($id = null){
-        $agentes = $this->modelAgente->getAll();
-        $clientes = $this->model->getAllCliete_y_Agente();
-        
-        $this->view->showAllClients($clientes, $agentes);
+        if(authHelpers::checkLogged()){
+            $agentes = $this->modelAgente->getAll();
+            $clientes = $this->model->getAllCliete_y_Agente();
+            
+            $this->view->showAllClients($clientes, $agentes);
+        }else{
+            // $this->err->showErr("No existe el agente con id: $id");
+        }
     }
 
     function showClients($id = null){
-        $clientes = $this->model->getClients($id);
-        $this->view->showClients($clientes);
+        if(authHelpers::checkLogged()){
+            $clientes = $this->model->getClients($id);
+            $this->view->showClients($clientes);
+        }else{
+            // $this->err->showErr("No existe el agente con id: $id");
+        }
     }
 
      function cambiarEstado($id){

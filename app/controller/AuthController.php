@@ -25,11 +25,17 @@ class AuthController
                 $email = $_POST['email'];
                 $password = $_POST['password'];
                 // echo password_hash($password, PASSWORD_DEFAULT); die();
-
                 $usuario = $this->model->getUser($email);
-                // var_dump($email);die();
-                if (!empty($usuario) && password_verify($password, $usuario->password)) {
-                    header("Location:" . BASE_URL . "agentes");
+
+                if ($usuario && password_verify($password, $usuario->password)) {
+
+                    session_start();
+                    $_SESSION['IS_LOGGED'] = true;
+                    $_SESSION['ID_USER'] = $usuario->id;
+                    $_SESSION['IUSERNAME'] = $usuario->email;
+
+                    header("Location:" . BASE_URL . "agentes");die();
+
                 } else {
                     $this->view->showLogin("Usuario incorrecto");
                 }
@@ -37,5 +43,12 @@ class AuthController
                 $this->view->showLogin("faltan datos obligatorios");
             }
         }
+    }
+
+    function logout(){
+        session_start();
+        session_destroy();
+        header("Location:". BASE_URL ."login");die();
+
     }
 }

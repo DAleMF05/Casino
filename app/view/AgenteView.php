@@ -1,17 +1,9 @@
 <?php
-require_once "libs/Smarty.class.php";
+require_once "view.php";
 
 
-class AgenteView
+class AgenteView extends view
 {
-
-  private $smarty;
-
-  function __construct()
-  {
-    $this->smarty = new Smarty();
-  }
-
   function mostrarAgentes($agentes)
   {
     $this->smarty->assign("base", BASE_URL);

@@ -22,4 +22,4 @@
 
 </div>
 
-{include 'htmlEnd.tpl'}
+{include 'htmlEnd.tpl'}f
