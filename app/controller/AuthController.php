@@ -24,8 +24,7 @@ class AuthController
 
                 $email = $_POST['email'];
                 $password = $_POST['password'];
-                // $clave = "12345";
-                // echo password_hash($clave, PASSWORD_DEFAULT); die();
+                // echo password_hash($password, PASSWORD_DEFAULT); die();
 
                 $usuario = $this->model->getUser($email);
                 // var_dump($email);die();
