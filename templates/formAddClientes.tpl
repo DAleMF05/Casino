@@ -1,6 +1,6 @@
 
 <form class="col-3 m-auto" action="crearCliente" method="POST">
- <div class="formulario"
+ <div class="formulario">
       <legend class="text-center">Crear Cliente</legend>
       <div class="mb-3">
         <label class="form-label">Nombre de Cliente</label>

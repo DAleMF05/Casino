@@ -5,8 +5,9 @@ class AuthController
 {
     private $model;
     private $view;
-    public function __construct()
-    {
+
+    public function __construct(){
+
         $this->view = new AuthView();
         $this->model = new AuthModel();
     }
@@ -15,21 +16,20 @@ class AuthController
     {
         $this->view->showLogin();
     }
+
     function verify()
     {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            if (!empty($_POST['email']) && !empty($_POST['password'])) {
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
+            if(!empty($_POST['email']) && !empty($_POST['password'])){
+
                 $email = $_POST['email'];
                 $password = $_POST['password'];
+                // $clave = "12345";
+                // echo password_hash($clave, PASSWORD_DEFAULT); die();
 
-                $clave = "12345";
-                echo password_hash($clave, PASSWORD_DEFAULT); die();
-
-                
-                // $usuario = $this->model->getUser($email);
-                
-
-                if ($usuario && password_verify($password, $usuario->password)) {
+                $usuario = $this->model->getUser($email);
+                // var_dump($email);die();
+                if (!empty($usuario) && password_verify($password, $usuario->password)) {
                     header("Location:" . BASE_URL . "agentes");
                 } else {
                     $this->view->showLogin("Usuario incorrecto");

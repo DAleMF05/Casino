@@ -1,5 +1,5 @@
 <form class="col-3 m-auto" action="crearAgente" method="POST">
- <div class="formulario"
+ <div class="formulario">
     
       <legend class="text-center">Crear Agente</legend>
       <div class="mb-3">
