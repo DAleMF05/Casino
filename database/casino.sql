@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-06-2024 a las 01:31:42
+-- Tiempo de generación: 03-06-2024 a las 22:32:45
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -41,7 +41,9 @@ CREATE TABLE `agentes` (
 
 INSERT INTO `agentes` (`id_agente`, `nombre`, `saldo`, `email`, `activado`) VALUES
 (1, 'juan', 2000.00, 'juian@gmail.com', 1),
-(3, 'Lucas', 102000.00, 'LucasSosa2019@hotmail.com', 1);
+(3, 'Lucas', 102000.00, 'LucasSosa2019@hotmail.com', 1),
+(4, 'Ale', 20000.00, 'Alejandro@gmail.com', 0),
+(5, 'Admin', 1400000.00, 'webadmin@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -62,11 +64,7 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id_cliente`, `nombre_usuario`, `saldo_cliente`, `activado`, `id_agente`) VALUES
-(1, 'francisco', 5000.00, 1, 1),
-(2, 'jose', 2000.00, 0, 3),
-(3, 'ale', 3000.00, 0, 3),
-(4, 'ds', 3000.00, 1, 3),
-(5, 'pepeeeee', 456.00, 1, 1);
+(7, 'Beraza', 6000.00, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -86,7 +84,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `email`, `password`, `rol`) VALUES
-(1, 'Lucassosa2019@hotmail.com\r\n', '$2y$10$ZyBuX80oAk2QwYav3ZluaO97GOlhu7Z2DdoT5eKk8dUjwd1YaFqtC', 'admin');
+(1, 'LucasSosa2019@hotmail.com', '$2y$10$gyhK5A2LO40.5OVVFNRaVOrGR42P.G1UMPuHoGI5ntgYU/gJJ.N92', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -119,13 +117,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `agentes`
 --
 ALTER TABLE `agentes`
-  MODIFY `id_agente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_agente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
@@ -141,6 +139,7 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `clientes`
 --
 ALTER TABLE `clientes`
+  ADD CONSTRAINT `fk_cliente_agentes` FOREIGN KEY (`id_agente`) REFERENCES `agentes` (`id_agente`),
   ADD CONSTRAINT `fk_clientes_agentes` FOREIGN KEY (`id_agente`) REFERENCES `agentes` (`id_agente`);
 COMMIT;
 
