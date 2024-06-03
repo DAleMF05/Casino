@@ -1,4 +1,5 @@
 <form class="col-3 m-auto" action="crearAgente" method="POST">
+ <div class="formulario"
     
       <legend class="text-center">Crear Agente</legend>
       <div class="mb-3">
@@ -20,5 +21,7 @@
           <option value="1">Activado</option>  
         </select>
       </div>
+   </div>
+
       <button type="submit" class="btn btn-primary col-12">Crear Agente</button>
   </form>

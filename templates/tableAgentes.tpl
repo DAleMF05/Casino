@@ -2,7 +2,7 @@
 
 {include 'formAddAgentes.tpl'}
 
-<table class="table table-success table-striped mt-2 text-center">
+<table class="table table-success table-striped mt-2 text-center table table-dark">
     <thead>
         <tr>
             <th scope="col">Nombre</th>

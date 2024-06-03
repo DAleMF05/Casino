@@ -2,7 +2,7 @@
 
 {include 'formAddclientes.tpl'}
 
-<table class="table table-success table-striped mt-2 text-center">
+<table class="table table-success table-striped mt-2 text-center table table-dark">
     <thead>
         <tr>
             <th scope="col">Nombre</th>
@@ -35,7 +35,7 @@
                     <a href='deleteClient/{$cliente->id_cliente}' class=' btn btn-danger'>Eliminar</a>
                     
                     
-                    {* {if !$cliente->activado}
+                     {if !$cliente->activado}
                     
                         <a href='cambiarEstado/{$cliente->id_cliente}' class=' btn btn-success'>Activar</a>
                         
@@ -43,10 +43,10 @@
                     
                     {else}
                     
-                        <a href='cambiarEstado/{$cliente->id_cliente}' class=' btn btn-success'>Desactivar</a> *}
+                        <a href='desactivar/{$cliente->id_cliente}' class=' btn btn-success'>Desactivar</a> 
                         
                         
-                    {* {/if} *}
+                     {/if} 
                 </td>
                 <td>{$cliente->nombre}</td>
             

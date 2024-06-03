@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2024-06-03 00:21:51
+/* Smarty version 4.3.2, created on 2024-06-03 03:58:49
   from 'C:\xampp\htdocs\proyectos\Casino\templates\tableAgentes.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_665cf07f77d664_75613200',
+  'unifunc' => 'content_665d2359990864_52223307',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7eb95d8c1e0c1c63849205c53c9e65b4313a5330' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Casino\\templates\\tableAgentes.tpl',
-      1 => 1717259447,
+      1 => 1717379922,
       2 => 'file',
     ),
   ),
@@ -23,14 +23,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:htmlEnd.tpl' => 1,
   ),
 ),false)) {
-function content_665cf07f77d664_75613200 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665d2359990864_52223307 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:htmlStart.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <?php $_smarty_tpl->_subTemplateRender('file:formAddAgentes.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-<table class="table table-success table-striped mt-2 text-center">
+<table class="table table-success table-striped mt-2 text-center table table-dark">
     <thead>
         <tr>
             <th scope="col">Nombre</th>

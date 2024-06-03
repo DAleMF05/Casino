@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2024-06-03 00:21:50
+/* Smarty version 4.3.2, created on 2024-06-03 04:31:59
   from 'C:\xampp\htdocs\proyectos\Casino\templates\htmlStart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_665cf07e488be8_35312127',
+  'unifunc' => 'content_665d2b1fdb0a21_26270197',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6b275dda8cddb899722838fff08289947c8fbb7d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Casino\\templates\\htmlStart.tpl',
-      1 => 1717259447,
+      1 => 1717381910,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_665cf07e488be8_35312127 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665d2b1fdb0a21_26270197 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,23 +39,21 @@ function content_665cf07e488be8_35312127 (Smarty_Internal_Template $_smarty_tpl)
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Casino Bet30</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="agentes">Agentes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="clientes">Clientes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="login">Login</a>
-        </li>
-      </ul>
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Casino Bet30</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="agentes">Agentes</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="clientes">Clientes</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="login" >Login</a>
+  </li>
+</ul>
     </div>
-  </div>
-</nav><?php }
+</nav>
+<?php }
 }

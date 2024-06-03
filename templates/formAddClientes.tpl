@@ -1,6 +1,6 @@
 
 <form class="col-3 m-auto" action="crearCliente" method="POST">
-    
+ <div class="formulario"
       <legend class="text-center">Crear Cliente</legend>
       <div class="mb-3">
         <label class="form-label">Nombre de Cliente</label>
@@ -25,6 +25,7 @@
       {/foreach}
       </select>
     </div>
+</div>
     
   
       <button type="submit" class="btn btn-primary col-12">Crear Cliente</button>

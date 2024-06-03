@@ -1,7 +1,7 @@
 {include 'htmlStart.tpl'}
 
 
-<table class="table table-success table-striped mt-2 text-center">
+<table class="table table-success table-striped mt-2 text-center table table-dark">
     <thead>
         <tr>
             <th scope="col">Nombre</th>
@@ -18,36 +18,36 @@
             </tr>
         {/if}
 
-    {foreach $clientes as $cliente}
-       
-        <tr>
+        {foreach $clientes as $cliente}
 
-            {$class = ($cliente->activado) ? "activado": ""}
+            <tr>
+
+                {$class = ($cliente->activado) ? "activado": ""}
             <tr class={$class}>
                 <td>{$cliente->nombre_usuario}</td>
-                <td>{$cliente->saldo}</td>
+                <td>{$cliente->saldo_cliente}</td>
 
-                {$estado = ($cliente->activado) ?  "cliente activado": "cliente desactivado"}
+                {$estado = ($cliente->activado) ?  "cliente activado" : "cliente desactivado"}
                 <td>{$estado}</td>
                 <td>
                     <a href='deleteClient/{$cliente->id_cliente}' class=' btn btn-danger'>Eliminar</a>
-                    
-                    
+
+
                     {if !$cliente->activado}
-                    
+
                         <a href='cambiarEstado/{$cliente->id_cliente}' class=' btn btn-success'>Activar</a>
-                        
-                    
-                    
+
+
+
                     {else}
-                    
+
                         <a href='cambiarEstado/{$cliente->id_cliente}' class=' btn btn-success'>Desactivar</a>
-                        
-                        
+
+
                     {/if}
                 </td>
-            
-        </tr>
+
+            </tr>
         {/foreach}
 
-        {include 'htmlEnd.tpl'}
+{include 'htmlEnd.tpl'}

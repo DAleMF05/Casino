@@ -1,12 +1,73 @@
-.finalizada{
+.finalizada {
     text-decoration: line-through;
 }
 
-.formAddTask{
+.formAddTask {
     border: 1px solid rgb(83, 81, 81);
     padding: 10px;
     border-radius: 20px;
 }
-.main-navbar{
+
+.main-navbar {
     background-color: #111827;
+}
+
+/* Estilos para el formulario */
+.formulario {
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    border: 2px solid #270404cc;
+    padding: 10px;
+    border-radius: 20px;
+}
+.formLogin{
+    width: 40%;
+    margin-top: 10%;
+    margin-left: 30%;
+    margin-right: 50%;
+
+    margin-bottom: 5%;
+    border: 2px solid #270404cc;
+    padding: 10px;
+    border-radius: 20px;
+}
+/* Estilos para la leyenda */
+legend {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Estilos para las etiquetas */
+label {
+    font-weight: bold;
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"],
+input[type="double"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para el botón de enviar */
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos para el botón de enviar al pasar el mouse */
+button[type="submit"]:hover {
+    background-color: #0056b3;
 }
