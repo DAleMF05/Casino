@@ -7,3 +7,4 @@
 ## HTML duplicado lo llevamos a una carpeta llamada templates con el objetivo de reutilizar ese codigo.
 ## Establecemos algunos estilos.
 ## Explicamos como exportar la base de datos y como crear las relaciones.
+## No es posible eliminar un Agente cuando tiene al menos un cliente, ya que contiene una clave Foranea.
