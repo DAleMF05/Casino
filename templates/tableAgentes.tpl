@@ -29,11 +29,12 @@
             <td>{$agente->activado}</td>
             <td>
             <a href='mostrarClientes/{$agente->id_agente}' class='btn btn-primary'>Ver Clientes</a>
+            <a href='showEditAgent/{$agente->id_agente}' class='btn btn-warning'>Editar</a>
             <a href='deleteAgent/{$agente->id_agente}' class='btn btn-danger'>Eliminar</a>
-            <a href='showEditAgent/{$agente->id_agente}' class='btn btn-danger'>Editar</a>
             </td>
             
         </tr>
         {/foreach}
+    </tbody>
 
         {include 'htmlEnd.tpl'}

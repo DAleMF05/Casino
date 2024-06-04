@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2024-06-03 04:31:59
+/* Smarty version 4.3.2, created on 2024-06-04 01:22:09
   from 'C:\xampp\htdocs\proyectos\Casino\templates\htmlStart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_665d2b1fdb0a21_26270197',
+  'unifunc' => 'content_665e502195c3b4_69658176',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6b275dda8cddb899722838fff08289947c8fbb7d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Casino\\templates\\htmlStart.tpl',
-      1 => 1717381910,
+      1 => 1717456928,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_665d2b1fdb0a21_26270197 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665e502195c3b4_69658176 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,9 +49,16 @@ function content_665d2b1fdb0a21_26270197 (Smarty_Internal_Template $_smarty_tpl)
   <li class="nav-item">
     <a class="nav-link" href="clientes">Clientes</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="login" >Login</a>
-  </li>
+  <?php if (!$_smarty_tpl->tpl_vars['logged']->value) {?>
+    <li class="nav-item">
+      <a class="nav-link" href="login">Iniciar Sesion</a>
+    </li>
+    <?php } else { ?>
+    <li class="nav-item">
+      <a class="nav-link" href="logout">Cerrar Sesion</a>
+    </li>
+  <?php }?>
+   
 </ul>
     </div>
 </nav>

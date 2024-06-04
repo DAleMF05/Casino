@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-06-2024 a las 22:32:45
+-- Tiempo de generación: 04-06-2024 a las 04:55:43
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -40,10 +40,9 @@ CREATE TABLE `agentes` (
 --
 
 INSERT INTO `agentes` (`id_agente`, `nombre`, `saldo`, `email`, `activado`) VALUES
-(1, 'juan', 2000.00, 'juian@gmail.com', 1),
-(3, 'Lucas', 102000.00, 'LucasSosa2019@hotmail.com', 1),
-(4, 'Ale', 20000.00, 'Alejandro@gmail.com', 0),
-(5, 'Admin', 1400000.00, 'webadmin@gmail.com', 1);
+(1, 'Lucas', 20000.00, 'lucassosa2019@hotmail.com', 1),
+(2, 'Alejandro', 50000.00, 'alejandro@hotmail.com', 1),
+(3, 'Ricardo', 4000.00, 'Ricardo@hotmail.com', 0);
 
 -- --------------------------------------------------------
 
@@ -55,7 +54,7 @@ CREATE TABLE `clientes` (
   `id_cliente` int(11) NOT NULL,
   `nombre_usuario` varchar(100) NOT NULL,
   `saldo_cliente` double(10,2) NOT NULL,
-  `activado` tinyint(1) NOT NULL,
+  `activado_cliente` tinyint(1) NOT NULL,
   `id_agente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -63,8 +62,10 @@ CREATE TABLE `clientes` (
 -- Volcado de datos para la tabla `clientes`
 --
 
-INSERT INTO `clientes` (`id_cliente`, `nombre_usuario`, `saldo_cliente`, `activado`, `id_agente`) VALUES
-(7, 'Beraza', 6000.00, 1, 3);
+INSERT INTO `clientes` (`id_cliente`, `nombre_usuario`, `saldo_cliente`, `activado_cliente`, `id_agente`) VALUES
+(1, 'Juan', 3500.00, 1, 2),
+(2, 'Anibal', 15000.00, 1, 2),
+(3, 'Peter', 2000.00, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `email`, `password`, `rol`) VALUES
-(1, 'LucasSosa2019@hotmail.com', '$2y$10$gyhK5A2LO40.5OVVFNRaVOrGR42P.G1UMPuHoGI5ntgYU/gJJ.N92', 'admin');
+(1, 'webadmin', '$2y$10$y8gdfEKb7W98AmDpaa2hzumiMYaTFkJZfpTcu1twoj1CTfqyFD32W', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -117,13 +118,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `agentes`
 --
 ALTER TABLE `agentes`
-  MODIFY `id_agente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_agente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
@@ -139,7 +140,6 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  ADD CONSTRAINT `fk_cliente_agentes` FOREIGN KEY (`id_agente`) REFERENCES `agentes` (`id_agente`),
   ADD CONSTRAINT `fk_clientes_agentes` FOREIGN KEY (`id_agente`) REFERENCES `agentes` (`id_agente`);
 COMMIT;
 

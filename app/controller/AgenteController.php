@@ -22,18 +22,6 @@ class AgenteController{
         }
     }
 
-    function mostrarAgente($id){
-        if(authHelpers::checkLogged()){
-
-            $agente = $this->model->getAgent($id);
-        
-            if($agente){
-                $this->view->mostrarAgente($agente);
-            }
-        }else{
-            // $this->err->showErr("No existe el pagente con id: $id");
-        }
-    }
 
     function delete($id){
         $this->model->delete($id);

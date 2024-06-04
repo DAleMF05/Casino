@@ -64,7 +64,7 @@ private function createTables() {
           `id_cliente` int(11) NOT NULL AUTO_INCREMENT,
           `nombre_usuario` varchar(100) NOT NULL,
           `saldo_cliente` double(10,2) NOT NULL,
-          `activado` tinyint(1) NOT NULL,
+          `activado_cliente` tinyint(1) NOT NULL,
           `id_agente` int(11) NOT NULL,
           PRIMARY KEY (id_cliente)
         );

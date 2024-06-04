@@ -13,17 +13,12 @@ class AgenteView extends view
 
   }
 
-  function mostrarAgente($agente)
-  {
-    $this->smarty->assign("base", BASE_URL);
-    $this->smarty->assign("agente", $agente);
 
-    $this->smarty->display('tableAgente.tpl');
-  }
   function showEditAgent($agente){
     $this->smarty->assign("base", BASE_URL);
     $this->smarty->assign("agente", $agente);
 
     $this->smarty->display('formEditAgent.tpl');
   }
+
 }

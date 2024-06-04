@@ -1,5 +1,7 @@
 {include 'htmlStart.tpl'}
 
+<a href='agentes'class="btn btn-outline-danger">Atrás</a>
+
 <form class="col-3 m-auto" action="editAgent" method="POST">
  <div class="formulario">
     

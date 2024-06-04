@@ -28,13 +28,12 @@ switch ($parametro[0]) {
     case 'showAllClients':
         $controller = new ClienteController();
         $controller->showAllClients($parametro[1]);
-    break;
+        break;
 
     case 'mostrarClientes':
         $controller = new ClienteController();
         $controller->showClients($parametro[1]);
-    break;
-
+        break;
     case 'crearAgente':
         $controller = new AgenteController();
         $controller->newAgent();
@@ -43,6 +42,18 @@ switch ($parametro[0]) {
     case 'crearCliente':
         $controller = new ClienteController();
         $controller->newClient();
+        break;
+
+    case 'showEditClient':
+        $controller = new ClienteController();
+        $controller->showEditClient($parametro[1]);
+
+        break;
+
+    case 'editClient':
+        $controller = new ClienteController();
+        $controller->editClient($parametro[1]);
+
         break;
 
 
@@ -65,7 +76,7 @@ switch ($parametro[0]) {
     case 'editAgent':
         $controller = new AgenteController();
         $controller->editAgent($parametro[1]);
-    
+
         break;
 
     case 'login':
@@ -82,11 +93,11 @@ switch ($parametro[0]) {
         $controller = new authController();
         $controller->logout();
         break;
-        
-    //     // PARA EL MOMENTO DE REGISTRAR UN USUARIO UDS. DEBEN USAR ÉSTE ÚLTIMO
-    //     echo password_hash($pass, PASSWORD_DEFAULT);
+
+        //     // PARA EL MOMENTO DE REGISTRAR UN USUARIO UDS. DEBEN USAR ÉSTE ÚLTIMO
+        //     echo password_hash($pass, PASSWORD_DEFAULT);
 
 
     default:
-    //    TODO:: hacer algo
+        //    TODO:: hacer algo
 }

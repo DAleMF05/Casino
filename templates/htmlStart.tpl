@@ -23,10 +23,6 @@
   <li class="nav-item">
     <a class="nav-link" href="clientes">Clientes</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="login" >Login</a>
-  </li>
-  
   {if !$logged}
     <li class="nav-item">
       <a class="nav-link" href="login">Iniciar Sesion</a>

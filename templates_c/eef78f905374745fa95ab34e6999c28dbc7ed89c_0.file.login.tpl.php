@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2024-06-03 04:46:57
+/* Smarty version 4.3.2, created on 2024-06-04 01:21:48
   from 'C:\xampp\htdocs\proyectos\Casino\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_665d2ea1b1cb25_35233748',
+  'unifunc' => 'content_665e500c25f9b9_76991601',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'eef78f905374745fa95ab34e6999c28dbc7ed89c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Casino\\templates\\login.tpl',
-      1 => 1717382814,
+      1 => 1717456899,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:htmlEnd.tpl' => 1,
   ),
 ),false)) {
-function content_665d2ea1b1cb25_35233748 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665e500c25f9b9_76991601 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:htmlStart.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="formLogin">
@@ -30,20 +30,25 @@ $_smarty_tpl->_subTemplateRender('file:htmlStart.tpl', $_smarty_tpl->cache_id, $
 
   <form class="formLogin" action="verify" method="POST">
     <legend class="text-center">Login</legend>
+
     <label class="col-sm-2 col-form-label">Email</label>
     <input type="text" name="email" class="form-control" placeholder="Ingrese email">
+
     <label class="form-label">Contraseña</label>
-    <input type="text" type="password" class="form-control" placeholder="Ingrese contraseña">
+    <input type="password" name="password" class="form-control" placeholder="Ingrese contraseña">
+
     <?php if ($_smarty_tpl->tpl_vars['msj']->value) {?>
       <div class='alert alert-warning'>
         <?php echo $_smarty_tpl->tpl_vars['msj']->value;?>
 
       </div>
     <?php }?>
+
     <button type="submit" class="btn btn-primary col-12">Ingresar</button>
   </form>
+
 </div>
 
 <?php $_smarty_tpl->_subTemplateRender('file:htmlEnd.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-}
+?>f<?php }
 }
