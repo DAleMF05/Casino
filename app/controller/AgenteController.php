@@ -1,6 +1,7 @@
 <?php
 require_once "app/model/AgenteModel.php";
 require_once "app/view/AgenteView.php";
+require_once "app/view/ErrView.php";
 
 class AgenteController{
 
@@ -18,7 +19,7 @@ class AgenteController{
             $agentes = $this->model->getAll();
             $this->view->mostrarAgentes($agentes);
         }else{
-            $this->err->showErr("No existe el agente con id: $id");
+            $this->err->showErr("No existe el agente con este id");
         }
     }
 
@@ -28,7 +29,7 @@ class AgenteController{
             $this->model->delete($id);
             header("Location:".BASE_URL."agentes");
         } catch (Exception $e) {
-            $this->err->showErr("El agente: $id . tiene clientes y no puede eliminarse");
+            $this->err->showErr("El agente tiene clientes y no puede eliminarse");
         }
     }
 
