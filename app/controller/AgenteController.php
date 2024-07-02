@@ -28,7 +28,7 @@ class AgenteController{
             $this->model->delete($id);
             header("Location:".BASE_URL."agentes");
         } catch (\Throwable $th) {
-            $this->err->showErr("No existe elagente con id: $id");
+            $this->err->showErr("El agente: $id . tiene clientes y no puede eliminarse");
         }
     }
 
