@@ -26,7 +26,7 @@ class ClienteController
 
             $this->view->showAllClients($clientes, $agentes);
         } else {
-            // $this->err->showErr("No existe el agente con id: $id");
+            $this->err->showErr("No existe el agente con id: $id");
         }
     }
 
@@ -36,7 +36,7 @@ class ClienteController
             $clientes = $this->model->getClients($id);
             $this->view->showClients($clientes);
         } else {
-            // $this->err->showErr("No existe el agente con id: $id");
+            $this->err->showErr("No existe el agente con id: $id");
         }
     }
 

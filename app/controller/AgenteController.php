@@ -18,14 +18,18 @@ class AgenteController{
             $agentes = $this->model->getAll();
             $this->view->mostrarAgentes($agentes);
         }else{
-            // $this->err->showErr("No existe el pagente con id: $id");
+            $this->err->showErr("No existe el agente con id: $id");
         }
     }
 
 
     function delete($id){
-        $this->model->delete($id);
-        header("Location:".BASE_URL."agentes");
+        try {
+            $this->model->delete($id);
+            header("Location:".BASE_URL."agentes");
+        } catch (\Throwable $th) {
+            $this->err->showErr("No existe elagente con id: $id");
+        }
     }
 
     function showEditAgent($id_agente){
@@ -66,9 +70,9 @@ class AgenteController{
                 header("Location:".BASE_URL."agentes");             
 
              }
-            // else{
-            //     $this->err->showErr("Faltan datos");   
-            // }
+            else{
+                $this->err->showErr("Faltan datos");   
+            }
         }
     }
 }
