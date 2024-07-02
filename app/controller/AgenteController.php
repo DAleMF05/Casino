@@ -27,7 +27,7 @@ class AgenteController{
         try {
             $this->model->delete($id);
             header("Location:".BASE_URL."agentes");
-        } catch (\Throwable $th) {
+        } catch (Exception $e) {
             $this->err->showErr("El agente: $id . tiene clientes y no puede eliminarse");
         }
     }
